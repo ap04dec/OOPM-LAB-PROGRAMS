@@ -1,0 +1,57 @@
+//EXP 4
+//wap create a class student having data members as roll no. , name and percentage as instance ddata members and count as static
+// data members the count should represents the number of objects created. 
+//create a static function which will return the number of objects created...
+#include <iostream>
+
+using namespace std;
+
+class student
+{
+    int roll_no;
+    char name[15];
+   int percentage;
+    
+   
+    static float count;
+     public:
+    void getdata()
+    {
+        count ++;
+        cout<<"\nter the name of student =";
+        cin>> name;
+        cout<<"\nter the roll_no =";
+        cin>>roll_no;
+        cout<<"\n ethe percentage = ";
+        cin>>percentage;
+    }
+    void showdata()
+    {
+        cout<<"*********************************";
+        cout<<"\n name :"<<name;
+              cout<<"\nroll no :"<<roll_no;
+  
+        cout<<"\npercentage : "<<percentage;
+    }
+    static float counting()
+    {
+        return count;
+    }
+    // student()
+    // {
+    //     count=count++;
+    // }
+};
+
+float student::count;
+int main()
+{
+    student ob,ob1;
+    ob.getdata();
+    ob.showdata();
+    ob1.getdata();
+    ob1.showdata();
+    cout<<"\n total number of objects in count ="<<student::counting;
+
+    return 0;
+}
