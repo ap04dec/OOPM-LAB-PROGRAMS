@@ -1,0 +1,49 @@
+#include <iostream>
+
+using namespace std;
+class employee
+{
+private:
+  int Emp_code;
+  int Emp_salary;
+  char Emp_name[100];
+  char Emp_Des[25];
+  char Emp_contact_number[10];
+
+public:
+   void Emp_details ()
+  {
+    cout << "\nenter the name of employee\n"<<Emp_name;
+    
+    cout << "\n enter the code of employee\n"<<Emp_code;
+    cout << "\n enter the salary of employee\n"<<Emp_salary;
+    cout << "\n enter the designation of employee\n"<<Emp_Des;
+     cout << "\n enter the contact number of employee\n"<<Emp_contact_number;
+  }
+   void Emp_Show_Details ()
+  {
+    cout << "enter the name of employee\n";
+    cin >> Emp_name;
+    cout << "enter the code of employee\n";
+    cin >> Emp_code;
+    cout << "enter the salary of employee\n";
+    cin >> Emp_salary;
+ cout << "\n enter the designation of employee\n";
+    cin >> Emp_Des;
+     cout << "\n enter the contact number of employee\n";
+     cin>>Emp_contact_number;
+    
+  }
+
+};
+
+int
+main ()
+{
+  employee obj;
+  obj.Emp_Show_Details ();
+  obj.Emp_details ();
+
+  return 0;
+}
+
