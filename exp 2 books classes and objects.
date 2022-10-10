@@ -1,0 +1,45 @@
+//wap to create a class book with private data members as title ,book id ,price.
+//except input from the user and display book details through arrays of objects
+#include <iostream>
+
+using namespace std;
+
+ class book {
+     private:
+     int Book_id;
+       char Book_Title[100];
+      int Book_Price;
+     
+     public:
+     void getdata()
+     {
+         cout<<"\n the book title:- \n  " <<Book_Title;
+         cout<<"\n the book id :- \n"<<Book_id;
+         cout<<"\n the book price :- \n"<<Book_Price;
+     }
+    void  showdata()
+    {
+        cout<<"\nBook_Title :\n";
+        cin>>Book_Title;
+        cout<<" Book_id : \n";
+        cin>>Book_id;
+        cout<<"Book_Price : \n";
+        cin>>Book_Price;
+    }
+     
+     
+ };
+int main()
+{
+   book ob1 [15];
+   
+   cout<<"*****enter the details of the book*****";
+   for(int i=1;i<=5;i++)
+   {
+         ob1[i].showdata();
+       ob1[i].getdata();
+     
+   }
+
+    return 0;
+}
