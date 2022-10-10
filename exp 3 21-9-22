@@ -1,0 +1,40 @@
+#include <iostream>
+
+using namespace std;
+class user
+ {
+     private:
+     char User_name[125];
+     float unit;
+     float total;
+     public:
+     
+   void showdata()
+     {
+          cout<<"User_name :-";
+        cin>>User_name;
+        cout<<"enter usit consumed :-";
+        cin>>total;
+          if (unit<100){
+              total = unit*.6;
+              
+          }
+          else if (unit>100&&unit<=200)
+          {
+              total=.8*unit;
+          }
+          else{
+              total=.92*unit;
+          }
+          cout<<"*************************\n";
+          cout<<"name is :"<<User_name<<endl;
+          cout<<"your total bill is :"<<total;
+     }
+ };
+int main()
+{
+  user u;
+  u.showdata();
+
+    return 0;
+}
