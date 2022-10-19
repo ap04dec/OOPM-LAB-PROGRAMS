@@ -1,0 +1,53 @@
+#include <iostream>
+
+using namespace std;
+class fruit
+{
+private:
+ char ch ;
+  int num;
+ 
+public:
+ 
+
+
+   friend class basket;
+
+};
+ class basket
+{
+  int total;
+public:
+void getData (fruit &obj)
+  {
+     cout<<"enter the fruit name :\n";
+     cin>>obj.ch;
+   
+   cout<<"enter the quantity of the fruits in kg :\n";
+  cin>>obj.num;
+}
+ 
+
+
+
+  void displayData (fruit &obj)
+  {
+      cout<<"Your fruit =\n"<<obj.ch;
+      cout<<"quantity of fruit in kg =\n"<<obj.num;
+  }
+
+};
+
+int
+main ()
+{
+basket obj;
+fruit obj1;
+
+obj.getData(obj1);
+obj.displayData(obj1);
+
+
+
+  return 0;
+}
