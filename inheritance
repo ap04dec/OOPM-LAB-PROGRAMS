@@ -1,0 +1,42 @@
+/*
+wacpp to decalre varaible x in base class and define getdata method which is used for read the value of x.
+define the one derived class where variable y is private to  create two method for derived one is read data method 
+and another is product(mutiply) to read the value of y inside the read data method and 
+calculate the product of derived class method inside the product nethod implement in single inheritance.*/ 
+#include<iostream>
+using namespace std;
+class alpha
+{
+	private:
+			int x;
+			public:
+		void getdata()
+		{
+		
+			cout<<"enter the value of x :";
+			cin>>x;
+			
+		}
+	
+};
+class sigma : public alpha
+{private:
+	int y;
+	public:
+		void readdata()
+		{ 
+			cout<<"enter the value of Y :";
+			cin>>y;
+		}
+		void product()
+		{
+			cout<<x*y;
+		}
+};
+int main()
+{
+	sigma ob2;
+	ob2.getdata();
+	ob2.readdata();
+	ob2.product();
+}
