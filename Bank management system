@@ -1,0 +1,167 @@
+#include<iostream>
+using namespace std;
+class account
+{public:
+	int AC_no;
+	string ac_type;
+	string Name;
+	
+	void get_acc_details()
+	{
+		cout<<"enter the account holder name :";
+		cin>>Name;
+		cout<<"enter the account type :";
+		cin>>ac_type;
+		cout<<"enter the Account number : ";
+		cin>>AC_no;
+	}
+	void display_details()
+	{
+		cout<<"Name:-"<<Name<<endl;
+		cout<<"A/C type:-"<<ac_type<<endl;
+		cout<<"A/C number :-"<<AC_no<<endl;
+	}
+	
+};
+class Current_Account : public account
+{
+	public:
+		float withdraw;
+		float deposit;
+		float c_balance=1250;
+		void c_display()
+		{
+			cout<<"current balance ="<<c_balance<<endl;
+		}
+		
+		void c_deposit()
+		{
+			cout<<"enter the amount to deposit ="<<endl;
+			cin>>deposit;
+			c_balance = c_balance+ deposit;
+			
+		}
+			void c_withdraw()
+	{
+			cout<<"enter the amount to withdreaw="<<endl;
+			cin>>withdraw;
+			
+			if (c_balance>1000)
+			{
+			
+			c_balance = c_balance - withdraw;
+			cout<<"after withdrwal your balance is :"<<c_balance<<endl;
+		}
+		else 
+		{
+			cout<<"you have insufficent balance!!!"<<endl;
+		}
+	}
+	
+};
+class Saving_Account : public account
+{
+	public:
+		float withdraw;
+		float deposit;
+		float s_balance=650;
+		void s_display()
+		{
+			cout<<"saving balance ="<<s_balance<<endl;
+		}
+		
+		void s_deposit()
+		{
+			cout<<"enter the amount to deposit ="<<endl;
+			cin>>deposit;
+			s_balance = s_balance+ deposit;
+			
+		}
+			void s_withdraw()
+	{
+			cout<<"enter the amount to withdreaw="<<endl;
+			cin>>withdraw;
+			
+			if (s_balance>500)
+			{
+			
+			s_balance = s_balance - withdraw;
+			cout<<"after withdrwal your balance is :"<<s_balance;
+		}
+		else 
+		{
+			cout<<"you have insufficent balance!!!";
+		}
+	}
+};
+
+int main()
+
+
+{
+
+saving s;
+current c;
+char ch;
+int n;
+cout<<"enter your account type:\n";
+cout<<"enter 'S' for saving account or 'C' for current account:";
+cin>>
+if (ch=='s'||ch=='S')
+{
+	s.get_acc_details();
+	s.display_details();
+	while (1)
+	{
+		cout<<"enter 1 for display amount \n enter 2 for deposite money \n enter 3 for withdraw money \n enter 4 for exit";
+		cin>>n;
+		switch(n)
+		{
+			case 1:
+				s.s_display();
+				break;
+				case 2:
+					s.s_deposit();
+				break;
+			case 3:
+				s.s_withdraw();
+			    break;
+			  //  case 4:
+			    //s.exit();
+			    //break;
+			    default:
+			    	cout<<"you have enter wrong choice";
+		}
+	}
+}
+if (ch=='c'||ch=='C')
+{
+	c.get_acc_details();
+	c.display_details();
+	while (1)
+	{
+		cout<<"enter 1 for display amount \n enter 2 for deposite money \n enter 3 for withdraw money \n enter 4 for exit";
+		cin>>n;
+		switch(n)
+		{
+			case 1:
+				c.c_display();
+				break;
+				case 2:
+					c.c_deposit();
+				break;
+			case 3:
+				c.c_withdraw();
+			    break;
+			  //  case 4:
+			    //s.exit();
+			    //break;
+			    default:
+			    	cout<<"you have enter wrong choice";
+		}
+	}
+}
+
+	
+	return 0;
+}
