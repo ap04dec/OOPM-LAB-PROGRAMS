@@ -100,13 +100,14 @@ int main()
 
 {
 
-saving s;
-current c;
+Saving_Account s;
+Current_Account c;
 char ch;
 int n;
 cout<<"enter your account type:\n";
 cout<<"enter 'S' for saving account or 'C' for current account:";
-cin>>
+cin>>ch;
+
 if (ch=='s'||ch=='S')
 {
 	s.get_acc_details();
