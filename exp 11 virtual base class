@@ -1,0 +1,72 @@
+//create a class base (data member int a) and two classes d1 (data member int b ) , d2 (data member int c) inheriteces the class base .
+ // create class d3  to calculate a,b and  c d3 class is drive for d1 and d2.   
+ #include <iostream>
+ using namespace std;
+ class base
+ {public:
+ 	int a;
+ 	void seta()
+ 	{
+ 		cout<<"enter the value of a =";
+ 		cin>>a;
+	 }
+	 void geta()
+	 {
+	 	cout<<a;
+	 }
+ 	
+ };
+ class d1 : virtual public base
+ {public:
+ 	int b;
+ 		void setb()
+ 	{
+ 		cout<<"enter the value of b =";
+ 		cin>>b;
+	 }
+	 void getb()
+	 {
+	 	cout<<b;
+	 }
+ 	
+ 	
+ };
+  class d2 : virtual public base
+ {public:
+ 	int c;
+ 			void setc()
+ 	{
+ 		cout<<"enter the value of c =";
+ 		cin>>c;
+	 }
+	 void getc()
+	 {
+	 	cout<<c;
+	 }
+ 	
+ };
+ class d3 : public d1 ,public d2
+ {
+ 	public:
+ 		int addi;
+		 void add()
+ 		
+ 		{ addi=a+b+c;
+ 			cout<<"the addition of a,b and c is ="<<addi;
+		 }
+ };
+ 
+ int main()
+ {
+ 	d3 obj;
+ 	obj.seta();
+ 	obj.geta();
+ 	obj.setb();
+ 	obj.getb();
+ 	obj.setc();
+ 	obj.getc();
+ 	obj.add();
+ 	
+ 	return 0;
+ }
+ 
