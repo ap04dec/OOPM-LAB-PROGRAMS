@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+class student
+{
+	public:
+		int roll_no;
+		char name ;
+		void f1()
+		{
+			cout<<"enter the name :";
+			cin>>name;
+			cout<<"enter the roll no :";
+			cin>>roll_no;
+		 } 
+		 void f2()
+		 {
+		 	cout<<"name ="<<name;
+		 	cout<<"roll no ="<<roll_no;
+		 }
+};
+class exam:public student
+{
+	public:
+		int marks1, marks2;
+		void f3()
+		{
+			cout<<"enter the marks of 6 subjects =";
+			cin>>marks1;
+			cout<<"enter the marks of 6 subjects =";
+			cin>>marks2;
+		}
+};
+class result: public exam
+{
+	public:
+		float total;
+		void add()
+		{
+			total=marks1+marks2;
+			cout<<"total marks ="<<total;
+		}
+};
+int main()
+{
+	result ob;
+	ob.f1();
+	ob.f2();
+	ob.f3();
+	ob.add();
+	return 0;
+}
